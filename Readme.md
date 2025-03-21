@@ -84,7 +84,7 @@ This will:
 ```
 server/
 │── service-registry/       # Eureka service registry
-│── api-gateway/            # Zuul or Spring Cloud Gateway
+│── api-gateway/            # Spring Cloud Gateway
 │── question-service/       # Question microservice
 │── quiz-service/           # Quiz microservice
 
