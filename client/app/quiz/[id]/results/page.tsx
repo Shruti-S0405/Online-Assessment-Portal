@@ -34,9 +34,9 @@ export default function ResultsPage() {
     <div className="container mx-auto py-10">
       <Card className="max-w-md mx-auto">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl">Quiz Results</CardTitle>
+          <CardTitle className="text-2xl">Assessment Results</CardTitle>
           {/* Access params using useParams */}
-          <CardDescription>Quiz ID: {params?.id}</CardDescription>
+          <CardDescription>Assessment ID: {params?.id}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col items-center space-y-6">
           <div className={`text-7xl font-bold ${color}`}>
@@ -52,7 +52,7 @@ export default function ResultsPage() {
             <Button variant="outline">Home</Button>
           </Link>
           <Link href="/take-quiz">
-            <Button>Take Another Quiz</Button>
+            <Button>Take Another Assessment</Button>
           </Link>
         </CardFooter>
       </Card>

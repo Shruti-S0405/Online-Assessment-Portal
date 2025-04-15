@@ -20,8 +20,8 @@ export default function TakeQuizPage() {
 
     if (!quizId || isNaN(Number(quizId))) {
       toast({
-        title: "Invalid Quiz ID",
-        description: "Please enter a valid quiz ID",
+        title: "Invalid ID",
+        description: "Please enter a valid ID",
         variant: "destructive",
       })
       return
@@ -35,16 +35,16 @@ export default function TakeQuizPage() {
     <div className="container mx-auto py-10">
       <Card className="max-w-md mx-auto">
         <CardHeader>
-          <CardTitle>Take a Quiz</CardTitle>
-          <CardDescription>Enter a quiz ID to start</CardDescription>
+          <CardTitle>Take a Assessment</CardTitle>
+          <CardDescription>Enter a assessment ID to start</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="quizId">Quiz ID</Label>
+              <Label htmlFor="quizId">Assessment ID</Label>
               <Input
                 id="quizId"
-                placeholder="Enter quiz ID"
+                placeholder="Enter Assessment ID"
                 value={quizId}
                 onChange={(e) => setQuizId(e.target.value)}
                 required
@@ -53,7 +53,7 @@ export default function TakeQuizPage() {
           </CardContent>
           <CardFooter>
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Loading..." : "Start Quiz"}
+              {isLoading ? "Loading..." : "Start Assessment"}
             </Button>
           </CardFooter>
         </form>

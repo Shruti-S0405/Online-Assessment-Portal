@@ -47,7 +47,7 @@ export default function CreateQuizPage() {
 
       toast({
         title: "Success!",
-        description: `Quiz "${title}" created successfully`,
+        description: `Assessment "${title}" created successfully`,
       })
 
       // Navigate to the quiz page
@@ -59,7 +59,7 @@ export default function CreateQuizPage() {
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to create quiz. Please try again.",
+        description: "Failed to create Assessment. Please try again.",
         variant: "destructive",
       })
     } finally {
@@ -71,16 +71,16 @@ export default function CreateQuizPage() {
     <div className="container mx-auto py-10">
       <Card className="max-w-md mx-auto">
         <CardHeader>
-          <CardTitle>Create New Quiz</CardTitle>
-          <CardDescription>Set up your quiz parameters</CardDescription>
+          <CardTitle>Create New Assessment</CardTitle>
+          <CardDescription>Set up your assessment parameters</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="title">Quiz Title</Label>
+              <Label htmlFor="title">Assessment Title</Label>
               <Input
                 id="title"
-                placeholder="Enter quiz title"
+                placeholder="Enter Assessment title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
@@ -118,7 +118,7 @@ export default function CreateQuizPage() {
           </CardContent>
           <CardFooter>
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Creating..." : "Create Quiz"}
+              {isLoading ? "Creating..." : "Create Assessment"}
             </Button>
           </CardFooter>
         </form>

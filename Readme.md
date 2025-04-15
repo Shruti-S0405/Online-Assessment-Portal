@@ -1,38 +1,39 @@
-## 📚 **Quiz-App**
+## 📚 **Online Assessment Portal**
 
-A microservices-based quiz application with a secure and scalable architecture using Java Spring Boot for the backend and Next.js for the frontend.
+A microservices-based online assessment portal with a secure and scalable architecture using Java Spring Boot for the backend and Next.js for the frontend. Designed for conducting and managing assessments seamlessly.
 
 ---
 
 ## 🛠️ **Project Structure**
 ```
-Quiz-App/
-│── quiz-frontend/       # Next.js frontend for the quiz application
-│── server/              # Backend microservices (Java, Spring Boot)
-│── start-all.ps1        # Script to start all services and the frontend
+Online-Assessment-Portal/
+│── portal-frontend/       # Next.js frontend for the assessment portal
+│── server/                # Backend microservices (Java, Spring Boot)
+│── start-all.ps1          # Script to start all services and the frontend
 ```
 
 ---
 
 ## 🚀 **Technologies Used**
+
 ### **Frontend:** 
 - Next.js (React-based framework)
-  
+
 ### **Backend:**
 - Java (JDK 21)
-- Spring Boot (Microservices)
-- API Gateway for routing
-- Service Registry for service discovery
+- Spring Boot (Microservices architecture)
+- Spring Cloud Gateway for API routing
+- Eureka Service Registry for service discovery
 
 ### **Others:**
-- PowerShell for batch service startup
+- PowerShell scripting for batch startup
 
 ---
 
 ## 🔧 **Prerequisites**
-- Java JDK 21 installed and added to system PATH.
-- Node.js and npm installed.
-- Visual Studio Code or IntelliJ IDEA for development.
+- Java JDK 21 installed and added to system PATH
+- Node.js and npm installed
+- Visual Studio Code or IntelliJ IDEA for development
 
 ---
 
@@ -40,19 +41,19 @@ Quiz-App/
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-repo/Quiz-App.git
-   cd Quiz-App
+   git clone https://github.com/your-repo/Online-Assessment-Portal.git
+   cd Online-Assessment-Portal
    ```
 
 2. **Backend Setup:**
-   - Open the `server` directory in your preferred IDE.
-   - Build each microservice (`service-registry`, `api-gateway`, `question-service`, `quiz-service`).
-   - Ensure the `target` directories with `.argfile` exist for each service.
+   - Open the `server` directory in your IDE.
+   - Build each microservice (`service-registry`, `api-gateway`, `question-service`, `assessment-service`).
+   - Ensure each service has a `target` directory with a valid `.argfile`.
 
 3. **Frontend Setup:**
-   - Navigate to the `quiz-frontend` folder:
+   - Navigate to the `portal-frontend` folder:
      ```bash
-     cd quiz-frontend
+     cd portal-frontend
      npm install
      ```
    - Run the Next.js development server:
@@ -69,14 +70,14 @@ To start all services and the frontend simultaneously, use the PowerShell script
 .\start-all.ps1
 ```
 This will:
-- Start each backend microservice with a slight delay.
-- Start the Next.js frontend in development mode.
+- Start each backend microservice with slight delays for initialization
+- Launch the frontend in development mode
 
 ---
 
-## 🌐 **Accessing the Application**
-- The Next.js application runs on **http://localhost:3000**.
-- Ensure all backend services are running smoothly.
+## 🌐 **Accessing the Portal**
+- The frontend runs at **http://localhost:3000**
+- Ensure all backend services are up and registered with the service registry
 
 ---
 
@@ -84,22 +85,23 @@ This will:
 ```
 server/
 │── service-registry/       # Eureka service registry
-│── api-gateway/            # Spring Cloud Gateway
-│── question-service/       # Question microservice
-│── quiz-service/           # Quiz microservice
+│── api-gateway/            # API gateway for routing requests
+│── question-service/       # Handles assessment questions
+│── assessment-service/     # Manages assessment sessions and submissions
 
-quiz-frontend/
-│── pages/                  # Next.js pages for routing
-│── components/             # UI components
-│── public/                 # Static files
-│── styles/                 # Global styles
+portal-frontend/
+│── pages/                  # Next.js routing pages
+│── components/             # UI components (e.g., forms, timers)
+│── public/                 # Static assets
+│── styles/                 # Global stylesheets
 ```
 
 ---
 
 ## 🛡️ **Troubleshooting**
-- If any service fails to start, check your Java and npm installations.
-- Verify the `.argfile` paths in the PowerShell script.
-- Adjust sleep durations in `start-all.ps1` if services need more time to initialize.
-- If Next.js doesn't start, make sure the port `3000` is not occupied.
+- Ensure Java and npm are properly installed and configured
+- Check `.argfile` references in the PowerShell script if a service doesn’t launch
+- Increase delay in `start-all.ps1` if services require more time to initialize
+- Make sure port **3000** is free before starting the frontend
 
+---

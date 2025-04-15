@@ -28,7 +28,7 @@ export default function QuizPage({ params }: { params: Promise<{ id: string }> }
       } catch (error) {
         toast({
           title: "Error",
-          description: "Failed to load quiz questions",
+          description: "Failed to load questions",
           variant: "destructive",
         })
       } finally {
@@ -85,7 +85,7 @@ export default function QuizPage({ params }: { params: Promise<{ id: string }> }
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to submit quiz",
+        description: "Failed to submit assessment",
         variant: "destructive",
       })
       setIsSubmitting(false)
@@ -95,7 +95,7 @@ export default function QuizPage({ params }: { params: Promise<{ id: string }> }
   if (isLoading) {
     return (
       <div className="container mx-auto py-10 text-center">
-        <p>Loading quiz questions...</p>
+        <p>Loading questions...</p>
       </div>
     )
   }
@@ -103,7 +103,7 @@ export default function QuizPage({ params }: { params: Promise<{ id: string }> }
   if (questions.length === 0) {
     return (
       <div className="container mx-auto py-10 text-center">
-        <p>No questions found for this quiz.</p>
+        <p>No questions found for this assessment.</p>
         <Button onClick={() => router.push("/")} className="mt-4">
           Back to Home
         </Button>
@@ -172,7 +172,7 @@ export default function QuizPage({ params }: { params: Promise<{ id: string }> }
           <div className="flex gap-2">
             {currentQuestion === questions.length - 1 ? (
               <Button onClick={handleSubmit} disabled={isSubmitting}>
-                {isSubmitting ? "Submitting..." : "Submit Quiz"}
+                {isSubmitting ? "Submitting..." : "Submit Assessment"}
               </Button>
             ) : (
               <Button onClick={handleNext}>Next</Button>

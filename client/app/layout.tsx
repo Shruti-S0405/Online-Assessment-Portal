@@ -10,8 +10,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Quiz Application",
-  description: "A quiz application built with Next.js",
+  title: "Online Assessment Portal",
+  description: "A application built with Next.js",
   generator: "v0.dev",
 };
 
